@@ -1,0 +1,140 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.34);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homework-form-wrapper {
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  box-shadow: 0 0 16px 0 rgba(211, 213, 217, 0.15), 0 8px 16px 0 rgba(117, 128, 148, 0.25);
+  padding: 50px;
+  position: relative;
+  overflow: auto;
+  max-height: calc(100% - 100px);
+
+  .close {
+    position: absolute;
+    color: #758094;
+    top: 9px;
+    right: 9px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .input-row {
+      display: flex;
+
+      &:not(.action-wrapper) > * {
+        flex: 0 0 200px;
+
+        &:not(:first-child) {
+          margin-left: 47px;
+        }
+      }
+
+      &.action-wrapper {
+        justify-content: flex-end;
+
+        > * {
+          &:not(:first-child) {
+            margin-left: 24px;
+          }
+        }
+      }
+
+      .all-row-input {
+        flex: 1 0 0;
+      }
+
+      @media screen and (max-width: 767px) {
+        flex-direction: column;
+        & > .mat-form-field {
+          flex: unset;
+          width: 200px;
+
+          &:not(:first-child) {
+            margin-left: 0;
+          }
+        }
+        &.action-wrapper {
+          align-items: center;
+
+          > * {
+            margin-bottom: 10px;
+
+            &:not(:first-child) {
+              margin-left: 0;
+            }
+          }
+
+          .mat-raised-button {
+            width: 160px;
+          }
+
+          .mat-button {
+            max-width: 200px;
+
+            ::ng-deep.mat-button-wrapper {
+              white-space: normal;
+              line-height: 16px;
+              display: block;
+              letter-spacing: 0.5px;
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 40px;
+    .close {
+      top: 8px;
+      right: 3px;
+      .mat-icon {
+        font-size: 16px;
+        line-height: 16px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    form .input-row {
+      flex-direction: column;
+
+      & > .mat-form-field {
+        flex: unset;
+        width: 200px;
+
+        &:not(:first-child) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  color: #49515F;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0 0 30px;
+}
+
+.mat-select, .mat-option {
+  text-transform: capitalize;
+}
+
+::ng-deep .mat-input-element.mat-form-field-autofill-control.cdk-text-field-autofill-monitored {
+  color: #758094;
+  //background-color: transparent!important;
+}

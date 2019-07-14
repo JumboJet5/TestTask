@@ -1,0 +1,44 @@
+<div class="homework-form-wrapper blue-theme">
+  <button mat-icon-button class="close">
+    <mat-icon>close</mat-icon>
+  </button>
+  <h2>Домашнє завдання</h2>
+  <form [formGroup]="homeworkForm">
+    <div class="input-row">
+      <mat-form-field>
+        <mat-select placeholder="Предмет" formControlName="lesson">
+          <mat-option *ngFor="let lesson of lessons" [value]="lesson.id">{{lesson.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="input-row">
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerStart" placeholder="Створено" formControlName="start">
+        <mat-datepicker-toggle matSuffix [for]="pickerStart">
+          <mat-icon matDatepickerToggleIcon>
+            <img src="../../../assets/icons/calendar.svg" alt="">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerEnd" placeholder="Виконати на" formControlName="end">
+        <mat-datepicker-toggle matSuffix [for]="pickerEnd">
+          <mat-icon matDatepickerToggleIcon>
+            <img src="../../../assets/icons/calendar.svg" alt="">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="input-row">
+      <mat-form-field class="all-row-input">
+        <input matInput placeholder="Текст завдання" formControlName="description">
+      </mat-form-field>
+    </div>
+    <div class="input-row action-wrapper">
+      <button class="blue" mat-button>Додати iндивiдульне завдання</button>
+      <button class="blue" mat-raised-button>Зберегти</button>
+    </div>
+  </form>
+</div>

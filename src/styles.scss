@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import "blue-theme";
+@import "white-theme";
+@import "light-theme";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  .mat-button, .mat-raised-button {
+    border-radius: 2px;
+  }
+
+  .mat-raised-button {
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12),
+    0 2px 2px 0 rgba(0, 0, 0, 0.24),
+    0 0 8px 0 rgba(0, 0, 0, 0.12),
+    0 8px 8px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .mat-raised-button.blue {
+    background-color: #00BCD4;
+    color: white;
+  }
+  .mat-button.blue {
+    color: #00BCD4;
+  }
+  .mat-button.white {
+    color: white;
+  }
+  .mat-raised-button.white {
+    background-color: white;
+    color: #00BCD4;
+  }
+  .mat-datepicker-content, .mat-select-panel {
+    border-radius: 0;
+  }
+}

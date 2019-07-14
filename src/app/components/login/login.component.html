@@ -1,0 +1,15 @@
+<div class="login-form-wrapper blur white-theme">
+  <h2>Вхiд в особистий кабiнет</h2>
+  <form [formGroup]="loginForm">
+    <mat-form-field>
+      <input matInput formControlName="email" placeholder="E-mail">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="password" placeholder="Пароль" [type]="isPassVisible ? 'text' : 'password'">
+      <mat-icon matSuffix (click)="isPassVisible = !isPassVisible">visibility{{isPassVisible ? '_off' : ''}}</mat-icon>
+      <mat-error>невiрний пароль</mat-error>
+    </mat-form-field>
+  </form>
+  <button class="white" mat-button>Забули пароль?</button>
+  <button class="white" mat-raised-button [disabled]="loginForm.invalid" (click)="onSubmit(loginForm.value)">Увiйти</button>
+</div>
